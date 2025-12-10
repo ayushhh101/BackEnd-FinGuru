@@ -6,6 +6,8 @@ const Goal = require('../models/Goal');
 router.get('/user/:userId', async (req, res) => {
   try {
     const goals = await Goal.find({ userId: req.params.userId }).sort({ createdAt: -1 });
+
+    
     
     res.json({
       success: true,
